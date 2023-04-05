@@ -17,9 +17,19 @@ let numbersStr = '0123456789635694378265487';
 /* Every time you click on the generate btn it is going to check if the checkbox is checked
 then it gives you the checked result */
 generate.addEventListener('click', ()=> {
+    let length = passwordLength.value;
+    // console.log(length);
     validate();
     const result = validate();
-    console.log(result)
+    let Password = "";
+    for(let i = 0 ; i < length ; i++){
+        let randomIndex = Math.floor(Math.random() * result.length);
+        Password += result[randomIndex]
+
+    };
+    
+    console.log(Password)
+    
 
     // All Probabilities. a lot of if statements but that's the easy way to do it.
 });
