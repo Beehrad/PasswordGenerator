@@ -16,12 +16,16 @@ let numbersStr = '0123456789635694378265487';
 
 /* Every time you click on the generate btn it is going to check if the checkbox is checked
 then it gives you the checked result */
-generate.addEventListener('click', () => {
+generate.addEventListener('click', ()=> {
+    validate();
+    const result = validate();
+    console.log(result)
+
     // All Probabilities. a lot of if statements but that's the easy way to do it.
 });
 
 
-function Validate(){
+function validate(){
     let combineStr = "";
     if(numbers.checked){
     combineStr += numbersStr;
@@ -30,17 +34,17 @@ function Validate(){
         combineStr += upercaseStr;
     }
     if(lowercase.checked){
-        combineStr += lowercase;
+        combineStr += lowercaseStr;
     }
     if(symbols.checked){
         combineStr += symbolstr;
     }
     if(!combineStr){
-        alert("Bitte ergänzen Sie eine Auswahl")
+        alert("Bitte ergänzen Sie eine Auswahl");
     }
     
-    return combineStr
-}
+    return combineStr;
+};
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
