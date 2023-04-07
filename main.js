@@ -49,13 +49,21 @@ function getRandomInt() {
     validate();
     const result = validate();
     let Password = "";
-    for(let i = 0 ; i < length ; i++){
-        let randomIndex = Math.floor(Math.random() * result.length);
+    let i = 0;
+    while(i < length){
+        i++;
+        let randomIndex = Math.floor(Math.random() * result.length)
         Password += result[randomIndex];
-    };
-    // console.log(Password)
+    }
     output.value = Password
-};
+    };
+
+    
+    // for(let i = 0 ; i < length ; i++){
+    //     let randomIndex = Math.floor(Math.random() * result.length);
+    //     Password += result[randomIndex];
+    // };
+    // console.log(Password)
 
 
 // Ability to copy the Text.
